@@ -21,7 +21,7 @@ export async function saveCategory(input: CategoryInput): Promise<ActionResult> 
     const { supabase } = await requireAdmin();
     const { id, ...category } = categoryInputSchema.parse(input);
     if (id && category.parent_id === id) {
-      return { ok: false, error: 'Uma categoria não pode ser subcategoria de si própria.' };
+      return { ok: false, error: 'Uma categoria não pode ser subcategoria dela mesma.' };
     }
     const { error } = id
       ? await supabase.from('categories').update(category).eq('id', id)
@@ -49,7 +49,7 @@ export async function deleteCategory(id: string): Promise<ActionResult> {
     if (error) throw error;
     refreshStore();
     revalidatePath('/admin/categorias');
-    return { ok: true, message: 'Categoria eliminada.' };
+    return { ok: true, message: 'Categoria excluída.' };
   });
 }
 
@@ -78,7 +78,7 @@ export async function deleteBanner(id: string): Promise<ActionResult> {
     if (error) throw error;
     refreshStore();
     revalidatePath('/admin/banners');
-    return { ok: true, message: 'Banner eliminado.' };
+    return { ok: true, message: 'Banner excluído.' };
   });
 }
 
@@ -91,6 +91,6 @@ export async function saveSettings(input: SettingsInput): Promise<ActionResult> 
     if (error) throw error;
     refreshStore();
     revalidatePath('/admin/configuracoes');
-    return { ok: true, message: 'Definições guardadas. A loja já reflete as alterações.' };
+    return { ok: true, message: 'Configurações salvas. A loja já reflete as alterações.' };
   });
 }

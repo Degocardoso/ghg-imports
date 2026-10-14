@@ -59,7 +59,7 @@ export default async function HomePage() {
 
       {featured.length + newArrivals.length === 0 && (
         <section className="container-store mt-20 text-center">
-          <p className="text-muted">O catálogo está a ser preparado. Volte em breve!</p>
+          <p className="text-muted">O catálogo está sendo preparado. Volte em breve!</p>
           <Link href="/catalogo" className="btn-outline mt-4">
             Ver catálogo <ArrowRight className="size-4" />
           </Link>

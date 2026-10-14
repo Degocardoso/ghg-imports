@@ -103,7 +103,7 @@ export function ImageUploader({ bucket, folder, value, onChange, max = 12, label
             className={cn('flex flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-line text-xs text-muted transition hover:border-gold/60 hover:text-gold-light', aspect)}
           >
             {uploading ? <LoaderCircle className="size-5 animate-spin text-gold" /> : <ImagePlus className="size-5" />}
-            {uploading ? `A enviar ${uploading}…` : 'Adicionar'}
+            {uploading ? `Enviando ${uploading}…` : 'Adicionar'}
           </button>
         )}
       </div>

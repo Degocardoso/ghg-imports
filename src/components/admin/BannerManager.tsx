@@ -149,14 +149,14 @@ export function BannerManager({ banners }: { banners: Banner[] }) {
                   type="button"
                   disabled={pending}
                   onClick={() => {
-                    if (!confirm('Eliminar este banner?')) return;
+                    if (!confirm('Excluir este banner?')) return;
                     startTransition(async () => {
                       setResult(await deleteBanner(b.id));
                       router.refresh();
                     });
                   }}
                   className="rounded-lg p-2 text-muted hover:text-red-300"
-                  aria-label="Eliminar banner"
+                  aria-label="Excluir banner"
                 >
                   <Trash className="size-4" />
                 </button>

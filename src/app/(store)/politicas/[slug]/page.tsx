@@ -25,7 +25,7 @@ const PAGES: Record<string, { title: string; field: keyof StoreSettings; fallbac
     title: 'Política de privacidade',
     field: 'privacy_policy',
     fallback:
-      'Os seus dados (nome, contato e endereço) são usados exclusivamente para processar o pedido e o atendimento, em conformidade com a LGPD. Não vendemos nem partilhamos dados com terceiros. Para solicitar acesso ou exclusão, fale conosco pelo WhatsApp.',
+      'Os seus dados (nome, contato e endereço) são usados exclusivamente para processar o pedido e o atendimento, em conformidade com a LGPD. Não vendemos nem compartilhamos dados com terceiros. Para solicitar acesso ou exclusão, fale conosco pelo WhatsApp.',
   },
   termos: {
     title: 'Termos de uso',

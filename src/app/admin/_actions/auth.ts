@@ -18,7 +18,7 @@ export async function login(_prev: LoginState, formData: FormData): Promise<Logi
     password: formData.get('password'),
     next: formData.get('next') ?? undefined,
   });
-  if (!parsed.success) return { error: 'Indique um e-mail e palavra-passe válidos.' };
+  if (!parsed.success) return { error: 'Informe um e-mail e senha válidos.' };
 
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithPassword({

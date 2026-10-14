@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
   } catch {
     return json({ error: 'Pedido inválido.' }, 400);
   }
-  if (raw.length > MAX_BODY_BYTES) return json({ error: 'Pedido demasiado grande.' }, 413);
+  if (raw.length > MAX_BODY_BYTES) return json({ error: 'Pedido muito grande.' }, 413);
 
   let body: unknown;
   try {
@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
       if (error.code === 'P0002') return json({ error: error.message }, 429);
       if (error.code === '23514') return json({ error: 'Alguns dados não são válidos. Verifique o formulário.' }, 422);
       console.error('[checkout] create_order falhou', error);
-      return json({ error: 'Não foi possível registar o pedido. Tente novamente em instantes.' }, 500);
+      return json({ error: 'Não foi possível registrar o pedido. Tente novamente em instantes.' }, 500);
     }
     order = data as CreatedOrder;
   } catch (error) {

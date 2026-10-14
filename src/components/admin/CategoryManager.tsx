@@ -61,7 +61,7 @@ export function CategoryManager({ categories, counts }: { categories: Category[]
   };
 
   const remove = (c: Category) => {
-    if (!confirm(`Eliminar a categoria "${c.name}"?`)) return;
+    if (!confirm(`Excluir a categoria "${c.name}"?`)) return;
     startTransition(async () => {
       const res = await deleteCategory(c.id);
       setResult(res);
@@ -91,7 +91,7 @@ export function CategoryManager({ categories, counts }: { categories: Category[]
               <button type="button" onClick={() => { setResult(null); edit(c); }} className="rounded-lg p-2 text-muted hover:text-fg" aria-label={`Editar ${c.name}`}>
                 <Pencil className="size-4" />
               </button>
-              <button type="button" onClick={() => remove(c)} disabled={pending} className="rounded-lg p-2 text-muted hover:text-red-300" aria-label={`Eliminar ${c.name}`}>
+              <button type="button" onClick={() => remove(c)} disabled={pending} className="rounded-lg p-2 text-muted hover:text-red-300" aria-label={`Excluir ${c.name}`}>
                 <Trash className="size-4" />
               </button>
             </li>

@@ -31,7 +31,7 @@ export async function saveProduct(id: string | null, input: ProductInput): Promi
 
     revalidateStore(parsed.slug);
     revalidatePath('/admin/produtos');
-    return { ok: true, message: 'Produto guardado.', data: { id: data as string } };
+    return { ok: true, message: 'Produto salvo.', data: { id: data as string } };
   });
 }
 
@@ -61,6 +61,6 @@ export async function softDeleteProduct(id: string): Promise<ActionResult> {
     if (error) throw error;
     revalidateStore();
     revalidatePath('/admin/produtos');
-    return { ok: true, message: 'Produto eliminado.' };
+    return { ok: true, message: 'Produto excluído.' };
   });
 }

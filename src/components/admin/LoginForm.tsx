@@ -5,7 +5,7 @@ import { useActionState } from 'react';
 import { login, type LoginState } from '@/app/admin/_actions/auth';
 
 const NOTICES: Record<string, string> = {
-  'sem-permissao': 'A sua conta não tem permissão de administrador.',
+  'sem-permissao': 'Sua conta não tem permissão de administrador.',
   config: 'Supabase não configurado. Verifique as variáveis de ambiente.',
 };
 

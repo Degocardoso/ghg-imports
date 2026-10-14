@@ -49,7 +49,7 @@ export default async function DashboardPage() {
     { label: 'Produtos ativos', value: stats.products_active ?? 0, hint: `${stats.products_hidden ?? 0} ocultos`, Icon: Package, href: '/admin/produtos' },
     { label: 'Variantes esgotadas', value: stats.variants_out ?? 0, hint: `${stats.variants_low ?? 0} com estoque baixo`, Icon: PackageX, href: '/admin/produtos?estoque=esgotado', alert: (stats.variants_out ?? 0) > 0 },
     { label: 'Pedidos', value: stats.orders_total ?? 0, hint: `${stats.orders_open ?? 0} em aberto · ${stats.orders_today ?? 0} hoje`, Icon: ClipboardList, href: '/admin/pedidos' },
-    { label: 'Categorias ativas', value: stats.categories_active ?? 0, hint: 'Gerir categorias', Icon: Layers, href: '/admin/categorias' },
+    { label: 'Categorias ativas', value: stats.categories_active ?? 0, hint: 'Gerenciar categorias', Icon: Layers, href: '/admin/categorias' },
     { label: 'Vendas confirmadas', value: formatPrice(stats.revenue_confirmed ?? 0), hint: 'Confirmado → Concluído', Icon: DollarSign, href: '/admin/pedidos?estado=concluido' },
   ];
 

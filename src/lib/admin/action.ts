@@ -18,12 +18,12 @@ interface PostgrestLikeError {
 export function dbErrorMessage(error: PostgrestLikeError): string {
   switch (error.code) {
     case '23505':
-      if (error.message?.includes('slug')) return 'Já existe um registo com este slug (URL). Escolha outro.';
+      if (error.message?.includes('slug')) return 'Já existe um registro com este slug (URL). Escolha outro.';
       if (error.message?.includes('sku')) return 'Já existe uma variante com este SKU.';
       if (error.message?.includes('product_variants_unique_option')) return 'Existem variantes duplicadas (mesmo tamanho e cor).';
-      return 'Registo duplicado.';
+      return 'Registro duplicado.';
     case '23503':
-      return 'Este registo está associado a outros dados e não pode ser removido.';
+      return 'Este registro está associado a outros dados e não pode ser removido.';
     case '23514':
       return 'Algum valor não cumpre as regras de validação.';
     case '42501':
@@ -31,7 +31,7 @@ export function dbErrorMessage(error: PostgrestLikeError): string {
     case 'P0001':
       return error.message ?? 'Operação recusada.';
     default:
-      return 'Erro ao gravar na base de dados. Tente novamente.';
+      return 'Erro ao salvar no banco de dados. Tente novamente.';
   }
 }
 
@@ -45,7 +45,7 @@ export async function safeAction<T>(fn: () => Promise<ActionResult<T>>): Promise
   } catch (error) {
     if (error instanceof UnauthorizedError) return { ok: false, error: error.message };
     if (error instanceof z.ZodError) {
-      return { ok: false, error: 'Verifique os campos assinalados.', fields: fieldErrors(error) };
+      return { ok: false, error: 'Verifique os campos destacados.', fields: fieldErrors(error) };
     }
     if (error && typeof error === 'object' && 'code' in error) {
       console.error('[admin action] db', error);

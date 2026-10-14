@@ -78,7 +78,7 @@ export function buildOrderMessage({ storeName, order, customer }: OrderMessageIn
   push('');
 
   push(`Pagamento preferido: ${PAYMENT_LABEL[customer.payment_preference]}`);
-  if (customer.lead_source) push(`Conheceu-nos por: ${LEAD_SOURCE_LABEL[customer.lead_source]}`);
+  if (customer.lead_source) push(`Nos conheceu por: ${LEAD_SOURCE_LABEL[customer.lead_source]}`);
   if (customer.notes) push(`Observações: ${customer.notes}`);
   push('', 'Olá! Acabei de fazer este pedido no site e gostaria de finalizar a compra. 🙌');
 

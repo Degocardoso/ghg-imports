@@ -15,6 +15,7 @@ export function Price({ price, compareAt, size = 'md', showPercent = true, fromL
   const pct = discountPercent(price, compareAt);
   return (
     <div className={cn('flex flex-wrap items-baseline gap-x-2 gap-y-0.5', className)}>
+      {fromLabel && <span className="w-full text-[11px] font-medium text-muted">a partir de</span>}
       {pct > 0 && (
         <span className={cn('text-muted line-through', size === 'lg' ? 'text-base' : 'text-xs')}>
           {formatPrice(compareAt)}
@@ -28,7 +29,6 @@ export function Price({ price, compareAt, size = 'md', showPercent = true, fromL
           size === 'lg' && 'text-3xl tracking-tight',
         )}
       >
-        {fromLabel && <span className="mr-1 text-xs font-medium text-muted">a partir de</span>}
         {formatPrice(price)}
       </span>
       {showPercent && pct > 0 && (

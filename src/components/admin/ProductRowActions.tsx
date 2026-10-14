@@ -32,13 +32,13 @@ export function ProductRowActions({ id, name, isActive }: { id: string; name: st
       <button
         type="button"
         onClick={() => {
-          if (confirm(`Eliminar "${name}"? O produto deixa de aparecer na loja e no painel (o histórico de pedidos é preservado).`)) {
+          if (confirm(`Excluir "${name}"? O produto deixa de aparecer na loja e no painel (o histórico de pedidos é preservado).`)) {
             run(() => softDeleteProduct(id));
           }
         }}
         className="rounded-lg p-2 text-muted hover:bg-white/5 hover:text-red-300"
-        title="Eliminar"
-        aria-label="Eliminar"
+        title="Excluir"
+        aria-label="Excluir"
       >
         <Trash className="size-4" />
       </button>

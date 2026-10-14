@@ -140,7 +140,7 @@ export function CheckoutForm() {
         state: data.uf || f.state,
       }));
     } catch {
-      // Sem ligação ao ViaCEP: o cliente preenche manualmente.
+      // Sem conexão com o ViaCEP: o cliente preenche manualmente.
     } finally {
       setCepLoading(false);
     }
@@ -203,7 +203,7 @@ export function CheckoutForm() {
       clear();
       router.push(`/pedido-enviado?codigo=${encodeURIComponent(data.order.code)}`);
     } catch {
-      setBanner('Falha de ligação. Verifique a internet e tente novamente.');
+      setBanner('Falha de conexão. Verifique a internet e tente novamente.');
     } finally {
       setSubmitting(false);
     }

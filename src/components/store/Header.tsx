@@ -63,7 +63,7 @@ export function Header({ categories, logoUrl }: { categories: CategoryNode[]; lo
             <div key={cat.id} className="group relative">
               <Link
                 href={`/catalogo?categoria=${cat.slug}`}
-                className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-muted transition hover:text-fg"
+                className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium whitespace-nowrap text-muted transition hover:text-fg"
               >
                 {cat.name}
                 {cat.children.length > 0 && <ChevronDown className="size-3.5 transition group-hover:rotate-180" />}

@@ -129,7 +129,7 @@ export const variantInputSchema = z.object({
   sku: optionalText(60),
   price: optionalMoney,
   compare_at_price: optionalMoney,
-  stock: z.coerce.number().int({ error: 'Stock deve ser inteiro.' }).min(0, { error: 'Stock não pode ser negativo.' }).max(100_000),
+  stock: z.coerce.number().int({ error: 'Estoque deve ser inteiro.' }).min(0, { error: 'Estoque não pode ser negativo.' }).max(100_000),
   is_active: z.boolean().default(true),
 });
 
@@ -149,7 +149,7 @@ export const productInputSchema = z
     is_featured: z.boolean(),
     is_active: z.boolean(),
     tags: z.array(trimmed(30).min(1)).max(20),
-    variants: z.array(variantInputSchema).min(1, { error: 'Adicione pelo menos uma variante (stock).' }).max(100),
+    variants: z.array(variantInputSchema).min(1, { error: 'Adicione pelo menos uma variante (estoque).' }).max(100),
   })
   .superRefine((p, ctx) => {
     if (p.compare_at_price !== null && p.compare_at_price <= p.price) {

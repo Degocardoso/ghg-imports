@@ -34,7 +34,7 @@ export async function requireAdminPage(): Promise<AdminSession> {
 
 export class UnauthorizedError extends Error {
   constructor() {
-    super('Sessão expirada ou sem permissão. Inicie sessão novamente.');
+    super('Sessão expirada ou sem permissão. Faça login novamente.');
   }
 }
 
